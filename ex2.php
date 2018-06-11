@@ -1,6 +1,6 @@
 <?php
 
-/* Créer une fonction permettant de convertir des degrès celsius en farenheit et inversement.
+/* Créer une fonction permettant de convertir des degrès celsius en fahrenheit et inversement.
 Des messages devront s'afficher en fonction de la température (celle en Celsius :)).
 
 En dessous de 0 : Il fait très froid.
@@ -21,13 +21,13 @@ function degree($_temperature, $_unit) {
     $_from_unit = '';
     $_to_unit = '';
 
-    //conversion Farenheit en Celsius
+    //conversion Fahrenheit en Celsius
     if($_unit == 'C'){
         $_val = ($_temperature - 32) / 1.8;
         $_from_unit = '°F';
         $_to_unit = '°C';
     } 
-    //conversion Celsius en Farenheit
+    //conversion Celsius en Fahrenheit
     if ($_unit == 'F') {
         $_val = ($_temperature * 1.8) + 32;
         $_from_unit = '°C';
@@ -35,25 +35,32 @@ function degree($_temperature, $_unit) {
     }
    
     if ($_val < 0 ) {
-        $_return = 'Il fait très froid. ';
+        $_message = 'Il fait très froid. ';
     } else if ($_val >= 0 && $_val <= 14) {
-        $_return = 'C\'est le noooord. ';
+        $_message = 'C\'est le noooord. ';
     } else if ($_val >= 15 && $_val <= 25) {
-        $_return =  'Il fait bon. ';
+        $_messagen =  'Il fait bon. ';
     } else if ($_val > 25) {
-        $_return =  'Il fait trop chaud. ';
+        $_message =  'Il fait trop chaud. ';
     }
 
-    $_return .= $_temperature.$_from_unit;
-    $_return .= ' équivaut à ';
-    $_return .= $_val.$_to_unit.'.';
-
-    return $_return;
+    //concaténation des variables et du texte
+    //return $_message.' '.$_temperature.$_from_unit.' équivaut à '.$_val.$_to_unit.'.';
+    
+    //équivaut à : 
+    $_message .= $_temperature.$_from_unit;
+    $_message .= ' équivaut à ';
+    $_message .= $_val.$_to_unit.'.';
+    return $_message;
 }
+?> 
 
-echo degree(27, 'F');
-echo '<br/>';
+<div style="font-family: arial;">
+    <?php
+        echo degree(27, 'F');
+        echo '<br/>';
 
-echo degree(41, 'C');
-echo '<br/>';
-
+        echo degree(41, 'C');
+        echo '<br/>';
+    ?>
+</div>

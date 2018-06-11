@@ -1,5 +1,7 @@
 <?php
-/* Gestion de séries.
+require('partials/header.php');
+
+/* Gestion de séries
 
 Nous voulons pouvoir gérer nos séries et pourquoi pas gérer le visionnage de nos saisons et épisodes favoris. On va créer une base de données nommée tvshow. On a le choix d'utiliser MySQL Workbench pour créer le schéma facilement ou créer nos tables directement sur PHPMyAdmin.
 
@@ -17,15 +19,20 @@ Créer une page permettant d'afficher la liste de nos séries sans le synopsis.
 
 Créer une page permettant de voir une série en détail. On pourra lire le synopsis à partir de cette page. */
 
-
-
-require('partials/header.php'); 
 ?>
 
 
 <!-- Le contenu de la page d'accueil -->
 <div class="container pt-5">
     <h1>Bienvenue sur TVsh📺ws</h1>
+
+    <div class="row pt-3">
+        
+    </div>
+
+
 </div>
+
+
 
     
